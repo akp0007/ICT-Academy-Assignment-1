@@ -43,23 +43,23 @@ function pwdvalidate() {
     p1w = "<span class='text-danger small'>Atleast One Upper Case Required</span>";
     if (pwd.value.length >= 8) {
         p4 = 1;
-        p4w = "<span class='text-success'>Minimum 8 Characters Found</span>";
+        p4w = "<span class='text-success small'>Minimum 8 Characters Found</span>";
     }
     if (p3r.test(pwd.value)) {
         p3 = 1; 
-        p3w = "<span class='text-success'>Atleast One Number Found</span>";
+        p3w = "<span class='text-success small'>Atleast One Number Found</span>";
     }
     if (p2r.test(pwd.value)) {
         p2 = 1; 
-        p2w = "<span class='text-success'>Atleast One Lower Case Found</span>";
+        p2w = "<span class='text-success small'>Atleast One Lower Case Found</span>";
     }
     if (p1r.test(pwd.value)) {
         p1 = 1; 
-        p1w = "<span class='text-success'>Atleast One Upper Case Found</span>";
+        p1w = "<span class='text-success small'>Atleast One Upper Case Found</span>";
     }
 
     if (p1 == 1 && p2 == 1 && p3 == 1 && p4 == 1) {
-        pwderror.innerHTML = "<div class='mt-4 alert alert-success rounded-0'>✔ Password Is Fine.</div>";
+        pwderror.innerHTML = "<div class='mt-4 alert alert-success rounded-0'>Password Is Fine</div>";
         pwdvalid = 1;
     } else {
         pwderror.innerHTML = "<div class='mt-4 alert alert-warning rounded-0'>" + p4w + "</br>" + p3w + "</br>" + p2w + "</br>" + p1w + "</div>";
