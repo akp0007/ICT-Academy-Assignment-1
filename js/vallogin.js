@@ -38,7 +38,7 @@ function emailvalidate() {
 function pwdvalidate() {
     p1 = p2 = p3 = p4 = 0;
     p4w = "<span class='text-danger small'>Minimum 8 Characters Required</span>";
-    p3w = "<span class='text-dange small'>Atleast One Number Required</span>";
+    p3w = "<span class='text-danger small'>Atleast One Number Required</span>";
     p2w = "<span class='text-danger small'>Atleast One Lower Case Required</span>";
     p1w = "<span class='text-danger small'>Atleast One Upper Case Required</span>";
     if (pwd.value.length >= 8) {
