@@ -26,11 +26,11 @@ let p3r = /\d/;
 
 
 formsubmitsignup.onsubmit = function() {
-    if (emailRegex.test(email.value) && (mobileRegex.test(mobile.value) || mobileRegex1.test(mobile.value) || mobileRegex2.test(mobile.value) || mobileRegex3.test(mobile.value)) && nameRegex.test(pname.value) && pwd.value.length >= 8 && p3r.test(pwd.value) && p2r.test(pwd.value) && p1r.test(pwd.value)) {
+    if (emailRegex.test(email.value) && (mobileRegex.test(mobile.value) || mobileRegex1.test(mobile.value) || mobileRegex2.test(mobile.value) || mobileRegex3.test(mobile.value)) && pwd.value.length >= 8 && p3r.test(pwd.value) && p2r.test(pwd.value) && p1r.test(pwd.value)) {
         return true;
     } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        formerror.innerHTML = "<div class='alert alert-danger rounded-0'>✖ Error.</div>";
+        formerror.innerHTML = "<div class='alert alert-danger rounded-0'> Error.</div>";
         return false;
     }
 
@@ -38,7 +38,7 @@ formsubmitsignup.onsubmit = function() {
 
 function emailvalidate() {
     if (emailRegex.test(email.value)) {
-        emailerror.innerHTML = "<div class='mt-4'><span class='alert alert-success rounded-0'>Valid Email.</span></div>";
+        emailerror.innerHTML = "<div class='mt-4'><span class='alert alert-success rounded-0'>Email Is Vaid</span></div>";
         emailvalid = 1;
     } else {
         emailerror.innerHTML = "<div class='mt-4'><span class='alert alert-danger rounded-0'>Invalid Email.</span></div>";
@@ -48,7 +48,7 @@ function emailvalidate() {
 
 function mobilevalidate() {
     if (mobileRegex.test(mobile.value) || mobileRegex1.test(mobile.value) || mobileRegex2.test(mobile.value) || mobileRegex3.test(mobile.value)) {
-        mobileerror.innerHTML = "<div class='mt-4'><span class='alert alert-success rounded-0'> Valid Mobile No.></span></div>";
+        mobileerror.innerHTML = "<div class='mt-4'><span class='alert alert-success rounded-0'> Valid Mobile No.</span></div>";
         mobilevalid = 1;
     } else {
         mobileerror.innerHTML = "<div class='mt-4'><span class='alert alert-danger rounded-0'>Invalid Mobile No.</span></div>";
@@ -59,29 +59,29 @@ function mobilevalidate() {
 function pwdvalidate() {
     p1 = p2 = p3 = p4 = 0;
     var pstrength = 0;
-    p4w = "<span class='text-danger'>✖ Minimum 8 characters required</span>";
-    p3w = "<span class='text-danger'>✖ Atleast one number required</span>";
-    p2w = "<span class='text-danger'>✖ Atleast one lower case required</span>";
-    p1w = "<span class='text-danger'>✖ Atleast one upper case required</span>";
+    p4w = "<span class='text-danger small'>Minimum 8 Characters Is Required</span>";
+    p3w = "<span class='text-danger small'>Atleast One Number Is Required</span>";
+    p2w = "<span class='text-danger small'>Atleast One Lower Case Is Required</span>";
+    p1w = "<span class='text-danger small'>Atleast One Upper Case Is Required</span>";
     if (pwd.value.length >= 8) {
         p4 = 1; // length condition good
         pstrength = pstrength + 1;
-        p4w = "<span class='text-success'>✔ Minimum 8 characters found</span>";
+        p4w = "<span class='text-success small'>Minimum 8 Characters Is Found</span>";
     }
     if (p3r.test(pwd.value)) {
         p3 = 1; // at least one number condition good
         pstrength = pstrength + 1;
-        p3w = "<span class='text-success'>✔ Atleast one number found</span>";
+        p3w = "<span class='text-success small'>Atleast One number Is found</span>";
     }
     if (p2r.test(pwd.value)) {
         p2 = 1; // one lowercase condition good
         pstrength = pstrength + 1;
-        p2w = "<span class='text-success'>✔ Atleast one lower case found</span>";
+        p2w = "<span class='text-success small'>Atleast One Lower Case Is Found</span>";
     }
     if (p1r.test(pwd.value)) {
         p1 = 1; // one uppercase condition good
         pstrength = pstrength + 1;
-        p1w = "<span class='text-success'>✔ Atleast one upper case found</span>";
+        p1w = "<span class='text-success small'>Atleast One Upper Case Is found</span>";
     }
     if (spChars.test(pwd.value)) {
         pstrength = pstrength + 1;
@@ -113,10 +113,10 @@ function pwdvalidate() {
     }
 
     if (p1 == 1 && p2 == 1 && p3 == 1 && p4 == 1) {
-        pwderror.innerHTML = "<div class='mt-4 alert alert-success rounded-0'>✔ Password Is fine.</br></br>Strength of password: <div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
+        pwderror.innerHTML = "<div class='mt-4 alert alert-success rounded-0'> Password Is Good.</br></br>password strength is: <div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
         pwdvalid = 1;
     } else {
-        pwderror.innerHTML = "<div class='mt-4 alert alert-info rounded-0'>" + p4w + "</br>" + p3w + "</br>" + p2w + "</br>" + p1w + "</br></br>Strength Password: <div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
+        pwderror.innerHTML = "<div class='mt-4 alert alert-warning rounded-0'>" + p4w + "</br>" + p3w + "</br>" + p2w + "</br>" + p1w + "</br></br>Strength Password: <div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
         pwdvalid = 0;
     }
 }
@@ -135,24 +135,6 @@ email.onblur = function() {
         emailerror.innerHTML = "";
     }
 }
-
-
-
-pname.onfocus = function() {
-    namevalidate();
-    formerror.innerHTML = "";
-    pname.onkeyup = function() {
-        namevalidate();
-    }
-}
-
-pname.onblur = function() {
-    formerror.innerHTML = "";
-    if (namevalid == 1) {
-        nameerror.innerHTML = "";
-    }
-}
-
 mobile.onfocus = function() {
     mobilevalidate();
     formerror.innerHTML = "";
@@ -165,5 +147,21 @@ mobile.onblur = function() {
     formerror.innerHTML = "";
     if (mobilevalid == 1) {
         mobileerror.innerHTML = "";
+    }
+}
+
+
+pwd.onfocus = function() {
+    pwdvalidate();
+    formerror.innerHTML = "";
+    pwd.onkeyup = function() {
+        pwdvalidate();
+    }
+}
+
+pwd.onblur = function() {
+    formerror.innerHTML = "";
+    if (pwdvalid == 1) {
+        pwderror.innerHTML = "";
     }
 }

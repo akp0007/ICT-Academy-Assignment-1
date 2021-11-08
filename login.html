@@ -13,7 +13,7 @@
 
 <body style=" background: rgb(183, 173, 230) url('/img/puli.jpg') no-repeat fixed center;  background-size: cover;">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
             <a class="navbar-brand text-light" href="/index.html"><img src="/img/sooji.jpg" alt="logo" height="50px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -25,9 +25,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="/list.html"><b>Districts</b></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="/contact.html"><b>Contact</b></a>
                     </li>
                 </ul class="navbar-nav">
                 <a class="btn btn-outline-light my-2 active" href="/login.html">Login</a>
@@ -47,17 +44,19 @@
                     <div class="card-body">
                         <h1 class="card-title text-center pb-5">Login to Kerala Tourism</h1>
                         <span class="card-text">
-                        <form action="/action_page.php">
+                            <form action="/form-submitted.html"  method="GET" id="formsubmitlogin">
+                                <span id="formerror"></span>
                             <div class="form-group">
                                 <label for="email">Email address:</label>
                                 <input required type="email" class="form-control" id="email">
+                                <span id="emailerror"></span>
                             </div>
                             <div class="form-group">
                                 <label for="pwd">Password:</label>
                                 <input required type="password" class="form-control" id="pwd">
+                                <span id="pwderror"></span>
                             </div>
-                            <button type="submit" class="btn btn-success">Submit to login</button>
-                        </form></span><br>
+                            <button type="submit" class="btn btn-success">Submit to login</button></span><br>
                         <p><a href="/signup.html"> Sign up for an Account</a></p>
                     </div>
                 </div>
@@ -68,10 +67,10 @@
 
 
     <!-- Footer -->
-    <footer class="page-footer font-small bg-dark text-light">
+    <footer class="page-footer font-small bg-danger text-light">
 
         <!-- Footer Links -->
-        <footer class="page-footer font-small bg-dark text-light">
+        <footer class="page-footer font-small bg-danger text-light">
 
             <!-- Footer Links -->
             <div class="container">

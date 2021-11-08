@@ -37,25 +37,29 @@ function emailvalidate() {
 
 function pwdvalidate() {
     p1 = p2 = p3 = p4 = 0;
-    p4w = "<span class='text-danger'>✖ Minimum 8 characters required</span>";
-    p3w = "<span class='text-danger'>✖ Atleast one number required</span>";
-    p2w = "<span class='text-danger'>✖ Atleast one lower case required</span>";
-    p1w = "<span class='text-danger'>✖ Atleast one upper case required</span>";
+    p4w = "<span class='text-danger small'>Minimum 8 Characters Is Required</span>";
+    p3w = "<span class='text-danger small'>Atleast One Number Is Required</span>";
+    p2w = "<span class='text-danger small'>Atleast One Lower Case Is Required</span>";
+    p1w = "<span class='text-danger small'>Atleast One Upper Case Is Required</span>";
     if (pwd.value.length >= 8) {
         p4 = 1; // length condition good
-        p4w = "<span class='text-success'>✔ Minimum 8 characters found</span>";
+        pstrength = pstrength + 1;
+        p4w = "<span class='text-success small'>Minimum 8 Characters Is Found</span>";
     }
     if (p3r.test(pwd.value)) {
         p3 = 1; // at least one number condition good
-        p3w = "<span class='text-success'>✔ Atleast one number found</span>";
+        pstrength = pstrength + 1;
+        p3w = "<span class='text-success small'>Atleast One number Is found</span>";
     }
     if (p2r.test(pwd.value)) {
         p2 = 1; // one lowercase condition good
-        p2w = "<span class='text-success'>✔ Atleast one lower case found</span>";
+        pstrength = pstrength + 1;
+        p2w = "<span class='text-success small'>Atleast One Lower Case Is Found</span>";
     }
     if (p1r.test(pwd.value)) {
         p1 = 1; // one uppercase condition good
-        p1w = "<span class='text-success'>✔ Atleast one upper case found</span>";
+        pstrength = pstrength + 1;
+        p1w = "<span class='text-success small'>Atleast One Upper Case Is found</span>";
     }
 
     if (p1 == 1 && p2 == 1 && p3 == 1 && p4 == 1) {
