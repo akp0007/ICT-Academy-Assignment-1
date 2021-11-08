@@ -1,4 +1,3 @@
-var email = document.getElementById("email");
 var emailerror = document.getElementById("emailerror");
 var mobile = document.getElementById("mobile");
 var mobileerror = document.getElementById("mobileerror");
@@ -19,6 +18,7 @@ var emailvalid = 0;
 var mobilevalid = 0;
 var pwdvalid = 0;
 var p1, p2, p3, p4;
+var pwstrength;
 
 let p1r = /(?=.*[A-Z])/;
 let p2r = /(?=.*[a-z])/;
@@ -89,34 +89,40 @@ function pwdvalidate() {
 
     if (pstrength <= 0) {
         pstrengthbg = 'bg-danger';
+        pwstrength = 'Very Weak';
         pl = 5;
     }
     if (pstrength == 1) {
         pstrengthbg = 'bg-danger';
+        pwstrength = 'Weak';
         pl = 20;
     }
     if (pstrength == 2) {
         pstrengthbg = 'bg-warning';
+        pwstrength = 'Medium';
         pl = 40;
     }
     if (pstrength == 3) {
         pstrengthbg = 'bg-warning';
+        pwstrength = 'Good';
         pl = 60;
     }
     if (pstrength == 4) {
         pstrengthbg = 'bg-success';
+        pwstrength = 'Strong';
         pl = 80;
     }
     if (pstrength >= 5) {
         pstrengthbg = 'bg-success';
+        pwstrength = 'Excellent';
         pl = 100;
     }
 
     if (p1 == 1 && p2 == 1 && p3 == 1 && p4 == 1) {
-        pwderror.innerHTML = "<div class='mt-4 alert alert-success rounded-0'> Password Is Good.</br></br><div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
+        pwderror.innerHTML = "<div class='mt-4 alert alert-success rounded-0'> Password Is Good.</br></br>Strength Of Password: "+pwstrength+"<div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
         pwdvalid = 1;
     } else {
-        pwderror.innerHTML = "<div class='mt-4 alert alert-warning rounded-0'>" + p4w + "</br>" + p3w + "</br>" + p2w + "</br>" + p1w + "</br></br>Strength Of Password<div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
+        pwderror.innerHTML = "<div class='mt-4 alert alert-warning rounded-0'>" + p4w + "</br>" + p3w + "</br>" + p2w + "</br>" + p1w + "</br></br>Strength Of Password:"+pwstrength+"<div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
         pwdvalid = 0;
     }
 }
