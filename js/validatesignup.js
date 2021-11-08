@@ -113,7 +113,7 @@ function pwdvalidate() {
     }
 
     if (p1 == 1 && p2 == 1 && p3 == 1 && p4 == 1) {
-        pwderror.innerHTML = "<div class='mt-4 alert alert-success rounded-0'> Password Is Good.</br></br>password strength is: <div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
+        pwderror.innerHTML = "<div class='mt-4 alert alert-success rounded-0'> Password Is Good.</br></br><div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
         pwdvalid = 1;
     } else {
         pwderror.innerHTML = "<div class='mt-4 alert alert-warning rounded-0'>" + p4w + "</br>" + p3w + "</br>" + p2w + "</br>" + p1w + "</br></br>Strength Password: <div class='progress'><div class='progress-bar " + pstrengthbg + "' role='progressbar' style='width: " + pl + "%' aria-valuenow=" + pstrength + " aria-valuemin='0' aria-valuemax='5'></div></div></div></div>";
